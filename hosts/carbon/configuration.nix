@@ -4,7 +4,11 @@
   imports =
     [
       ./hardware-configuration.nix
-      ../modules/nixos/hardware/fprintd.nix
+      ../../modules/nixos/hardware/fprintd.nix
+      ../../modules/nixos/hardware/nvidia.nix
+      ../../modules/nixos/wm/gnome.nix
+      ../../modules/nixos/wm/hyprland.nix
+      ../../modules/nixos/apps/games.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
@@ -19,9 +23,6 @@
   i18n.defaultLocale = "en_CA.UTF-8";
 
   services.xserver.enable = true;
-
-  services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
 
   services.xserver.xkb = {
     layout = "us";
@@ -52,14 +53,6 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  #services.fprintd.enable = true;
-  #services.fprintd.tod.enable = true;
-  #services.fprintd.tod.driver = pkgs.libfprint-2-tod1-goodix;
-
-  hardware.graphics.enable = true;
-  services.xserver.videoDrivers = ["nvidia"];
-  hardware.nvidia.open = true;
-
   programs.firefox.enable = true;
 
   nixpkgs.config.allowUnfree = true;
@@ -79,9 +72,6 @@
     unzip
     direnv
     nix-direnv
-    xbomb
-    ace-of-penguins
-    scrot
     flameshot
     python311
   ];
