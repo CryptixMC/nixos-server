@@ -9,6 +9,8 @@
       ../../modules/nixos/wm/gnome.nix
       ../../modules/nixos/wm/hyprland.nix
       ../../modules/nixos/apps/games.nix
+      ../../modules/nixos/apps/virtualization.nix
+      ../../modules/nixos/apps/docker.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
@@ -45,7 +47,7 @@
   users.users.cryptix = {
     isNormalUser = true;
     description = "cryptix";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     shell = pkgs.zsh;
     packages = with pkgs; [
     ];
@@ -60,8 +62,7 @@
   programs.zsh.enable = true;
 
   environment.systemPackages = with pkgs; [
-    zed-editor
-    neovim
+    #zed-editor
     podman
     distrobox
     nh
@@ -74,6 +75,15 @@
     nix-direnv
     flameshot
     python311
+    xwayland
+    lazygit
+    prismlauncher
+    celeste
+    libreoffice
+    onlyoffice-desktopeditors
+    gimp
+    gimpPlugins.gmic
+    gimp-with-plugins
   ];
 
   services.openssh.enable = true;
