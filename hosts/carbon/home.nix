@@ -1,19 +1,11 @@
 { pkgs, inputs, ... }:
 {
-<<<<<<< HEAD
   imports = [
-      #../../modules/home-manager/apps/zed.nix
       ../../modules/home-manager/apps/ghostty.nix
       ../../modules/home-manager/wm/hyprland.nix
       ../../modules/home-manager/wm/waybar.nix
       ../../modules/home-manager/apps/zen-browser.nix
   ];
-=======
-  imports =
-    [
-      ../../modules/home-manager/apps/zed.nix
-    ];
->>>>>>> parent of 4ce9e31 (added hyprland, waybar, and ghostty configs to nix)
 
   home.username = "cryptix";
   home.homeDirectory = "/home/cryptix";
