@@ -29,8 +29,7 @@
       $fileManager = dolphin
       $menu = walker
       $editor = zeditor
-      $browser = firefox
-
+      $browser = zen-twilight
 
       #################
       ### AUTOSTART ###

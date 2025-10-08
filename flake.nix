@@ -33,7 +33,10 @@
     homeConfigurations = {
       cryptix = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        modules = [ ./hosts/carbon/home.nix ];
+        modules = [
+          ./hosts/carbon/home.nix
+          stylix.homeModules.stylix
+        ];
         extraSpecialArgs = { inherit inputs; };
       };
     };

@@ -1,7 +1,7 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 let
-  colors = config.stylix.colors or {
+/*colors = config.lib.stylix.colors; or {
     base00 = "#050505";
     base05 = "#5f5f5f";
     base08 = "#cf01ed";
@@ -9,7 +9,7 @@ let
     base0E = "#4301ed";
     base0C = "#7501ed";
     base07 = "#bcbcbc";
-  };
+  };'' */
 in
 {
   programs.waybar = {
@@ -43,17 +43,17 @@ in
       tray = { };
     }];
 
-    style = ''
+    style = lib.mkAfter ''
       * {
-        background: ${colors.base00};
-        color: ${colors.base07};
+        background: @base00;
+        color: @base07;
         border-radius: 8px;
         font-family: "JetBrainsMono Nerd Font", monospace;
       }
-      #clock { color: ${colors.base08}; }
-      #battery { color: ${colors.base0D}; }
-      #cpu, #memory, #temperature { color: ${colors.base0E}; }
-      #network { color: ${colors.base0C}; }
+      #clock { color: @base08; }
+      #battery { color: @base08; }
+      #cpu, #memory, #temperature { color: @base08; }
+      #network { color: @base08; }
     '';
   };
 }
