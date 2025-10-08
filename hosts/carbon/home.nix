@@ -1,9 +1,11 @@
 { pkgs, inputs, ... }:
 {
-  imports =
-    [
-      ../../modules/home-manager/apps/zed.nix
-    ];
+  imports = [
+      #../../modules/home-manager/apps/zed.nix
+      ../../modules/home-manager/apps/ghostty.nix
+      ../../modules/home-manager/wm/hyprland.nix
+      ../../modules/home-manager/wm/waybar.nix
+  ];
 
   home.username = "cryptix";
   home.homeDirectory = "/home/cryptix";
