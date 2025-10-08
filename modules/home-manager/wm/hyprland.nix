@@ -29,7 +29,7 @@
       $fileManager = dolphin
       $menu = walker
       $editor = zeditor
-      $browser = firefox
+      $browser = zen-twilight
 
 
       #################
@@ -104,7 +104,7 @@
 
           # Change transparency of focused and unfocused windows
           active_opacity = 1.0
-          inactive_opacity = 0.85
+          inactive_opacity = 0.95
 
           shadow {
               enabled = true

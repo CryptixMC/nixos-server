@@ -1,15 +1,7 @@
 { config, pkgs, ... }:
 
 let
-  colors = config.stylix.colors or {
-    base00 = "#050505";
-    base05 = "#5f5f5f";
-    base08 = "#cf01ed";
-    base0D = "#5e01ed";
-    base0E = "#4301ed";
-    base0C = "#7501ed";
-    base07 = "#bcbcbc";
-  };
+  colors = config.lib.stylix.colors;
 in
 {
   programs.waybar = {
