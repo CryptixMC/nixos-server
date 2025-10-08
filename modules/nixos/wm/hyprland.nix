@@ -9,5 +9,6 @@
     wofi
     xcursor-pro
     kanshi
+    walker
   ];
 }

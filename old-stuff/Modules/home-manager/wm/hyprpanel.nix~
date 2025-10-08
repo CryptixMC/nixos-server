@@ -1,0 +1,18 @@
+{ inputs, ... }:
+
+{
+  imports = [
+    inputs.hyprpanel.homeManagerModules.hyprpanel
+  ];
+
+  programs.hyprpanel = {
+    enable = true;
+    overlay.enable = true;
+
+    settings = {
+      menus = {
+        clock.time.hideSeconds = true;
+      };
+    };
+  };
+}

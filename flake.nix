@@ -8,9 +8,12 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    stylix.url = "github:danth/stylix";
+
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, stylix, ... }@inputs:
   let
     system = "x86_x64-linux";
   in
@@ -19,6 +22,7 @@
       carbon = nixpkgs.lib.nixosSystem {
         modules = [
           ./hosts/carbon/configuration.nix
+          stylix.nixosModules.stylix
         ];
       };
     };

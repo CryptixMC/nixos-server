@@ -1,0 +1,87 @@
+{
+  "name": "Ultraviolet",
+  "author": "cryptix (https://github.com/CryptixMC/ultraviolet-theme.git)",
+  "colors": {
+    "editor.background": "#050505",
+    "editor.foreground": "#5f5f5f",
+    "editor.selectionBackground": "#212121",
+    "editor.lineHighlightBackground": "#080808",
+    "editorCursor.foreground": "#cf01ed",
+    "editorWhitespace.foreground": "#373737",
+    "editorIndentGuide.background": "#212121",
+    "editorIndentGuide.activeBackground": "#5e01ed",
+    "editor.selectionHighlightBackground": "#0f0f0f",
+    "editor.findMatchBackground": "#ab01ed",
+    "editor.findMatchHighlightBackground": "#9901ed",
+    "editor.wordHighlightBackground": "#8701ed",
+    "editor.wordHighlightStrongBackground": "#7501ed",
+    "editorBracketMatch.background": "#4301ed",
+    "editorBracketMatch.border": "#1b01ed",
+    "editorGutter.background": "#080808",
+    "editorGutter.foreground": "#777777",
+    "editorLineNumber.foreground": "#777777",
+    "editorLineNumber.activeForeground": "#bcbcbc"
+  },
+  "tokenColors": [
+    {
+      "scope": ["comment", "punctuation.definition.comment"],
+      "settings": {
+        "foreground": "#373737"
+      }
+    },
+    {
+      "scope": ["string", "constant.other.symbol"],
+      "settings": {
+        "foreground": "#cf01ed"
+      }
+    },
+    {
+      "scope": ["constant.numeric"],
+      "settings": {
+        "foreground": "#ab01ed"
+      }
+    },
+    {
+      "scope": ["variable", "identifier"],
+      "settings": {
+        "foreground": "#5f5f5f"
+      }
+    },
+    {
+      "scope": ["keyword", "storage.type", "storage.modifier"],
+      "settings": {
+        "foreground": "#9901ed"
+      }
+    },
+    {
+      "scope": ["entity.name.function", "support.function"],
+      "settings": {
+        "foreground": "#8701ed"
+      }
+    },
+    {
+      "scope": ["entity.name.type", "support.type"],
+      "settings": {
+        "foreground": "#7501ed"
+      }
+    },
+    {
+      "scope": ["entity.name.class", "support.class"],
+      "settings": {
+        "foreground": "#5e01ed"
+      }
+    },
+    {
+      "scope": ["entity.name.tag", "markup.heading"],
+      "settings": {
+        "foreground": "#4301ed"
+      }
+    },
+    {
+      "scope": ["invalid", "markup.error"],
+      "settings": {
+        "foreground": "#1b01ed"
+      }
+    }
+  ]
+}

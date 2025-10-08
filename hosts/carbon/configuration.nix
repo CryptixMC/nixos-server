@@ -1,5 +1,4 @@
 { config, pkgs, ... }:
-
 {
   imports =
     [
@@ -11,6 +10,8 @@
       ../../modules/nixos/apps/games.nix
       ../../modules/nixos/apps/virtualization.nix
       ../../modules/nixos/apps/docker.nix
+      ../../modules/temp.nix
+      ../../modules/nixos/style/stylix.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
@@ -62,7 +63,6 @@
   programs.zsh.enable = true;
 
   environment.systemPackages = with pkgs; [
-    #zed-editor
     podman
     distrobox
     nh
@@ -77,16 +77,14 @@
     python311
     xwayland
     lazygit
-    prismlauncher
     celeste
-    libreoffice
     onlyoffice-desktopeditors
-    gimp
-    gimpPlugins.gmic
-    gimp-with-plugins
+    discord
+    qbittorrent
   ];
 
   services.openssh.enable = true;
+  services.tailscale.enable = true;
 
   system.stateVersion = "25.05";
 
