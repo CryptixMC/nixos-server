@@ -11,7 +11,7 @@
       ../../modules/nixos/apps/virtualization.nix
       ../../modules/nixos/apps/docker.nix
       ../../modules/temp.nix
-      ../../modules/nixos/style/stylix.nix
+      ../../modules/style/stylix.nix
     ];
 
   boot.loader.systemd-boot.enable = true;

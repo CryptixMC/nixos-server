@@ -5,6 +5,7 @@
       ../../modules/home-manager/wm/hyprland.nix
       ../../modules/home-manager/wm/waybar.nix
       ../../modules/home-manager/apps/zen-browser.nix
+      ../../modules/style/stylix.nix
   ];
 
   home.username = "cryptix";
@@ -15,6 +16,8 @@
     neovim
     prismlauncher
   ];
+
+  stylix.targets.zen-browser.enable = false;
 
   home.file = {
 

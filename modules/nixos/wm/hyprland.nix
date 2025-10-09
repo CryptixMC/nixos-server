@@ -4,7 +4,7 @@
 
   environment.systemPackages = with pkgs; [
     kitty
-    waybar
+    #waybar
     hyprpaper
     wofi
     xcursor-pro
