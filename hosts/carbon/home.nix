@@ -15,6 +15,7 @@
   home.packages = with pkgs; [
     neovim
     prismlauncher
+    brightnessctl
   ];
 
   stylix.targets.zen-browser.enable = false;

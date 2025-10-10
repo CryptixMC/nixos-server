@@ -29,7 +29,7 @@
       $fileManager = dolphin
       $menu = walker
       $editor = zeditor
-      $browser = firefox
+      $browser = zen-twilight
 
 
       #################
@@ -283,6 +283,9 @@
       bindel = ,XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
       bindel = ,XF86MonBrightnessUp, exec, brightnessctl -e4 -n2 set 5%+
       bindel = ,XF86MonBrightnessDown, exec, brightnessctl -e4 -n2 set 5%-
+
+      bindel = $mainMod, F8, exec, brightnessctl -d platform::kbd_backlight set 1-
+      bindel = $mainMod, F9, exec, brightnessctl -d platform::kbd_backlight set +1
 
       # Requires playerctl
       bindl = , XF86AudioNext, exec, playerctl next

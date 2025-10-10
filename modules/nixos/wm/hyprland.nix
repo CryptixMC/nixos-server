@@ -10,5 +10,6 @@
     xcursor-pro
     kanshi
     walker
+    pavucontrol
   ];
 }
