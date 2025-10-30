@@ -1,19 +1,11 @@
 { pkgs, ... }:
 {
   imports = [
-<<<<<<< HEAD
-      #../../modules/home-manager/apps/ghostty.nix
-      ../../modules/home-manager/wm/hyprland.nix
-      #../../modules/home-manager/wm/waybar.nix
-      ../../modules/home-manager/apps/zen-browser.nix
-      ../../modules/nixos/style/stylix.nix
-=======
     ../../modules/home-manager/apps/ghostty.nix
     ../../modules/home-manager/wm/hyprland.nix
     ../../modules/home-manager/wm/waybar.nix
     ../../modules/home-manager/apps/zen-browser.nix
     ../../modules/style/stylix.nix
->>>>>>> experimental
   ];
 
   home.username = "cryptix";

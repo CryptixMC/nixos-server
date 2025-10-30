@@ -30,10 +30,6 @@
       $menu = walker
       $editor = zeditor
       $browser = zen-twilight
-<<<<<<< HEAD
-=======
-
->>>>>>> experimental
 
       #################
       ### AUTOSTART ###

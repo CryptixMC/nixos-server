@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
   services.fprintd.enable = true;
   services.fprintd.tod.enable = true;

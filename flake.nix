@@ -17,28 +17,32 @@
 
   };
 
-  outputs = { self, nixpkgs, home-manager, stylix, ... }@inputs:
-  let
-    system = "x86_x64-linux";
-  in
-  {
-    nixosConfigurations = {
-      carbon = nixpkgs.lib.nixosSystem {
-        modules = [
-          ./hosts/carbon/configuration.nix
-          stylix.nixosModules.stylix
-        ];
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      stylix,
+      ...
+    }@inputs:
+    {
+      nixosConfigurations = {
+        carbon = nixpkgs.lib.nixosSystem {
+          modules = [
+            ./hosts/carbon/configuration.nix
+            stylix.nixosModules.stylix
+          ];
+        };
+      };
+      homeConfigurations = {
+        cryptix = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          modules = [
+            ./hosts/carbon/home.nix
+            stylix.homeModules.stylix
+          ];
+          extraSpecialArgs = { inherit inputs; };
+        };
       };
     };
-    homeConfigurations = {
-      cryptix = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        modules = [
-          ./hosts/carbon/home.nix
-          stylix.homeModules.stylix
-        ];
-        extraSpecialArgs = { inherit inputs; };
-      };
-    };
-  };
 }
