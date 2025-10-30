@@ -3,8 +3,8 @@
   stylix = {
     enable = true;
 
-    image = ../../../themes/ultraviolet/alyssa.png;
-    base16Scheme = ../../../themes/ultraviolet/ultraviolet.yaml;
+    image = ../../themes/ultraviolet/alyssa.png;
+    base16Scheme = ../../themes/ultraviolet/ultraviolet.yaml;
     polarity = "dark";
     fonts = {
       monospace = {

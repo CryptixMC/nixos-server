@@ -4,6 +4,13 @@ Welcome to my NixOS configuration! This repository is designed for modularity, t
 
 ---
 
+## TO-DO
+- [ ] get all modules to be styled via stylix
+- [ ] add a template for styles
+- [ ] waybar is a WIP
+
+---
+
 ## Table of Contents
 
 - [Overview](#overview)
@@ -48,7 +55,7 @@ nix-dots/
 
 ## Theming with Stylix
 
-Stylix is configured system-wide (not via Home Manager) for consistent theming.  
+Stylix is configured system-wide (not via Home Manager) for consistent theming.
 The main theme is **Ultraviolet**, defined in `themes/ultraviolet/`.
 
 - **Wallpaper:** `themes/ultraviolet/alyssa.png`
@@ -58,21 +65,21 @@ The main theme is **Ultraviolet**, defined in `themes/ultraviolet/`.
 
 Stylix is imported in `modules/nixos/style/stylix.nix` and enabled in each host config.
 
-_Screenshot: Stylix theme in action_  
+_Screenshot: Stylix theme in action_
 ![Stylix screenshot](screenshots/stylix-theme.png)
 
 ---
 
 ## Hosts
 
-Each machine has its own config in `hosts/`.  
+Each machine has its own config in `hosts/`.
 Example: `hosts/carbon/` contains:
 
 - `configuration.nix` (system config)
 - `hardware-configuration.nix` (hardware details)
 - `home.nix` (user config)
 
-_Screenshot: Host-specific desktop_  
+_Screenshot: Host-specific desktop_
 ![Host screenshot](screenshots/host-carbon.png)
 
 ---
@@ -84,17 +91,17 @@ Reusable modules are in `modules/`:
 - `modules/nixos/` for system modules (apps, hardware, style, window managers)
 - `modules/home-manager/` for user-level modules
 
-_Screenshot: Modular config structure_  
+_Screenshot: Modular config structure_
 ![Modules screenshot](screenshots/modules-structure.png)
 
 ---
 
 ## Home Manager
 
-User configuration is managed via Home Manager, integrated with flakes.  
+User configuration is managed via Home Manager, integrated with flakes.
 See `hosts/carbon/home.nix` and `modules/home-manager/`.
 
-_Screenshot: Home Manager apps and settings_  
+_Screenshot: Home Manager apps and settings_
 ![Home Manager screenshot](screenshots/home-manager.png)
 
 ---

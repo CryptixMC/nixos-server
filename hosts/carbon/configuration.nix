@@ -1,18 +1,17 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-      ../../modules/nixos/hardware/fprintd.nix
-      ../../modules/nixos/hardware/nvidia.nix
-      ../../modules/nixos/wm/gnome.nix
-      ../../modules/nixos/wm/hyprland.nix
-      ../../modules/nixos/apps/games.nix
-      ../../modules/nixos/apps/virtualization.nix
-      ../../modules/nixos/apps/docker.nix
-      ../../modules/temp.nix
-      ../../modules/nixos/style/stylix.nix
-    ];
+  imports = [
+    ./hardware-configuration.nix
+    ../../modules/nixos/hardware/fprintd.nix
+    ../../modules/nixos/hardware/nvidia.nix
+    ../../modules/nixos/wm/gnome.nix
+    ../../modules/nixos/wm/hyprland.nix
+    ../../modules/nixos/apps/games.nix
+    ../../modules/nixos/apps/virtualization.nix
+    ../../modules/nixos/apps/docker.nix
+    ../../modules/temp.nix
+    ../../modules/style/stylix.nix
+  ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -48,13 +47,18 @@
   users.users.cryptix = {
     isNormalUser = true;
     description = "cryptix";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
-    shell = pkgs.zsh;
-    packages = with pkgs; [
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "docker"
     ];
+    shell = pkgs.zsh;
   };
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   programs.firefox.enable = true;
 
