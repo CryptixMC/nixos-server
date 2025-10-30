@@ -1,10 +1,14 @@
-{pkgs, lib, ... }:
+{ ... }:
 
 {
   programs.zed-editor = {
     enable = true;
 
-    extensions = ["nix" "toml" "make"];
+    extensions = [
+      "nix"
+      "toml"
+      "make"
+    ];
 
     userSettings = {
       hour_format = "hour24";
@@ -21,7 +25,12 @@
         dock = "bottom";
         detect_venv = {
           on = {
-            directories = [".env" "env" ".venv" "venv"];
+            directories = [
+              ".env"
+              "env"
+              ".venv"
+              "venv"
+            ];
             activate_script = "default";
           };
         };
