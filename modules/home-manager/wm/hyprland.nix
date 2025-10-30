@@ -202,9 +202,9 @@
       }
 
       # https://wiki.hypr.land/Configuring/Variables/#gestures
-      gestures {
-          workspace_swipe = false
-      }
+      # gestures {
+      #     workspace_swipe = false
+      # }
 
       # Example per-device config
       # See https://wiki.hypr.land/Configuring/Keywords/#per-device-input-configs for more
