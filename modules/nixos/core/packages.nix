@@ -5,8 +5,9 @@
     distrobox
     nh
     git
-    ollama
+    pciutils
     foliate
+    cudaPackages.cudatoolkit
     protonvpn-gui
     unzip
     direnv

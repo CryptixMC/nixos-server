@@ -1,4 +1,7 @@
-{ ... }:
+{
+  pkgs,
+  ...
+}:
 {
   imports = [
     ./hardware-configuration.nix
@@ -28,5 +31,17 @@
   ];
 
   system.stateVersion = "25.05";
+
+  nixpkgs.config = {
+    allowBroken = true;
+    permittedInsecurePackages = [
+      "electron-35.7.5"
+    ];
+  };
+
+  environment.variables = {
+    LD_LIBRARY_PATH = "${pkgs.lib.makeLibraryPath [ pkgs.cudaPackages.cudatoolkit ]}";
+    CUDA_VISIBLE_DEVICES = "0";
+  };
 
 }

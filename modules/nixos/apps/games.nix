@@ -2,6 +2,8 @@
 {
   environment.systemPackages = with pkgs; [
     prismlauncher
+    gfn-electron
+    lutris
   ];
 
   programs.steam = {
