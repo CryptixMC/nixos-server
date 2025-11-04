@@ -6,6 +6,7 @@
     image = ../../themes/ultraviolet/alyssa.png;
     base16Scheme = ../../themes/ultraviolet/ultraviolet.yaml;
     polarity = "dark";
+    targets.qt.enable = false;
     fonts = {
       monospace = {
         package = pkgs.nerd-fonts.jetbrains-mono;

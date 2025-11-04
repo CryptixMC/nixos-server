@@ -1,4 +1,7 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  ...
+}:
 {
   imports = [
     ./hardware-configuration.nix
@@ -11,85 +14,34 @@
     ../../modules/nixos/apps/docker.nix
     ../../modules/temp.nix
     ../../modules/style/stylix.nix
+    ../../modules/nixos/services/pipewire.nix
+    ../../modules/nixos/services/printing.nix
+    ../../modules/nixos/services/ssh.nix
+    ../../modules/nixos/services/tailscale.nix
+    ../../modules/nixos/services/xserver.nix
+    ../../modules/nixos/services/libinput.nix
+    ../../modules/nixos/services/flatpak.nix
+    ../../modules/nixos/core/bootloader.nix
+    ../../modules/nixos/core/networking.nix
+    ../../modules/nixos/core/locale.nix
+    ../../modules/nixos/core/users.nix
+    ../../modules/nixos/core/nix.nix
+    ../../modules/nixos/core/packages.nix
+    ../../modules/nixos/core/programs.nix
   ];
-
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
-  networking.hostName = "carbon";
-
-  networking.networkmanager.enable = true;
-
-  time.timeZone = "America/Winnipeg";
-
-  i18n.defaultLocale = "en_CA.UTF-8";
-
-  services.xserver.enable = true;
-
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
-
-  services.printing.enable = true;
-
-  services.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-  };
-
-  services.libinput.enable = true;
-
-  users.users.cryptix = {
-    isNormalUser = true;
-    description = "cryptix";
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-      "docker"
-    ];
-    shell = pkgs.zsh;
-  };
-
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
-
-  programs.firefox.enable = true;
-
-  nixpkgs.config.allowUnfree = true;
-
-  programs.zsh.enable = true;
-
-  environment.systemPackages = with pkgs; [
-    podman
-    distrobox
-    nh
-    git
-    ollama
-    foliate
-    protonvpn-gui
-    unzip
-    direnv
-    nix-direnv
-    flameshot
-    python311
-    xwayland
-    lazygit
-    celeste
-    onlyoffice-desktopeditors
-    discord
-    qbittorrent
-  ];
-
-  services.openssh.enable = true;
-  services.tailscale.enable = true;
 
   system.stateVersion = "25.05";
+
+  nixpkgs.config = {
+    allowBroken = true;
+    permittedInsecurePackages = [
+      "electron-35.7.5"
+    ];
+  };
+
+  environment.variables = {
+    LD_LIBRARY_PATH = "${pkgs.lib.makeLibraryPath [ pkgs.cudaPackages.cudatoolkit ]}";
+    CUDA_VISIBLE_DEVICES = "0";
+  };
 
 }

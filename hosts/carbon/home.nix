@@ -1,10 +1,13 @@
-{ pkgs, ... }:
+{ ... }:
 {
   imports = [
+    ../../modules/home-manager/core/packages.nix
+    ../../modules/home-manager/core/variables.nix
     ../../modules/home-manager/apps/ghostty.nix
     ../../modules/home-manager/wm/hyprland.nix
     ../../modules/home-manager/wm/waybar.nix
     ../../modules/home-manager/apps/zen-browser.nix
+    ../../modules/home-manager/apps/zed.nix
     ../../modules/style/stylix.nix
   ];
 
@@ -12,22 +15,9 @@
   home.homeDirectory = "/home/cryptix";
   home.stateVersion = "25.05";
 
-  home.packages = with pkgs; [
-    neovim
-    prismlauncher
-    brightnessctl
-    zed-editor-fhs
-    nixd
-    nil
-  ];
-
   stylix.targets.zen-browser.enable = false;
 
   home.file = {
-
-  };
-
-  home.sessionVariables = {
 
   };
 

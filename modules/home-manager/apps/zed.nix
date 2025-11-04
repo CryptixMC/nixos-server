@@ -1,8 +1,10 @@
-{ ... }:
+{ pkgs, lib, ... }:
 
 {
+  stylix.targets.zed.enable = true;
   programs.zed-editor = {
     enable = true;
+    package = pkgs.zed-editor-fhs;
 
     extensions = [
       "nix"
@@ -13,11 +15,6 @@
     userSettings = {
       hour_format = "hour24";
       auto_update = false;
-      theme = {
-        mode = "system";
-        light = "Ultraviolet";
-        dark = "Ultraviolet";
-      };
       terminal = {
         alternate_scroll = "off";
         blinking = "off";
@@ -63,10 +60,9 @@
       vim_mode = false;
       load_direnv = "shell_hook";
       base_keymap = "VSCode";
-      ui_font_size = 16;
-      buffer_font_size = 16;
+      ui_font_size = lib.mkForce 16;
+      buffer_font_size = lib.mkForce 16;
     };
   };
 
-  xdg.configFile."zed/themes/ultraviolet.json".source = ../../../assets/zed/ultraviolet.json;
 }
