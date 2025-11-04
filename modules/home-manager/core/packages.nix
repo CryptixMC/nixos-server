@@ -4,7 +4,6 @@
     neovim
     prismlauncher
     brightnessctl
-    zed-editor-fhs
     nixd
     nil
     vinegar

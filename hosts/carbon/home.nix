@@ -7,6 +7,7 @@
     ../../modules/home-manager/wm/hyprland.nix
     ../../modules/home-manager/wm/waybar.nix
     ../../modules/home-manager/apps/zen-browser.nix
+    ../../modules/home-manager/apps/zed.nix
     ../../modules/style/stylix.nix
   ];
 
