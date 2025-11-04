@@ -1,6 +1,7 @@
 { pkgs, lib, ... }:
 
 {
+  stylix.targets.zed.enable = true;
   programs.zed-editor = {
     enable = true;
     package = pkgs.zed-editor-fhs;
@@ -14,7 +15,6 @@
     userSettings = {
       hour_format = "hour24";
       auto_update = false;
-      theme = lib.mkForce "Ultraviolet";
       terminal = {
         alternate_scroll = "off";
         blinking = "off";

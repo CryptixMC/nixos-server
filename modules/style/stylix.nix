@@ -7,7 +7,6 @@
     base16Scheme = ../../themes/ultraviolet/ultraviolet.yaml;
     polarity = "dark";
     targets.qt.enable = false;
-    targets.zed.enable = true;
     fonts = {
       monospace = {
         package = pkgs.nerd-fonts.jetbrains-mono;
